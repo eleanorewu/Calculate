@@ -42,6 +42,10 @@ function show(content) {
         if (content == "/") return;
     }
 
+    // 取得最後一個字
+    var last = final[final.length - 1];
+    console.log(last);
+
     // 最終數字 += 參數-內容
     final += content;
     // 結果元素.內容 = 最終數字
