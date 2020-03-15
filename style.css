@@ -28,7 +28,7 @@ body {
           box-shadow: 0 10px 10px rgba(68, 68, 68, 0.3);
 }
 
-#box div {
+#box .btn, #equal {
   border: 2px solid #fff;
   cursor: pointer;
   font-size: 18px;
@@ -37,18 +37,21 @@ body {
   background-color: transparent;
 }
 
-#box div:active {
+#box .btn:active, #equal:active {
   background-color: rgba(255, 255, 255, 0.295);
 }
 
 #box #result {
-  width: 310px;
-  height: 55px;
+  width: 320px;
+  height: 65px;
   border: 2px solid #fff;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1 / 5;
-  font-size: 35px;
+  font-size: 36px;
+  border-radius: 20px;
   text-align: right;
+  padding: 12px 15px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
