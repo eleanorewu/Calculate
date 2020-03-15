@@ -1,4 +1,4 @@
-// 取得結果元素
+/// 取得結果元素
 var result = document.getElementById("result");
 // 取得按鈕：0-9 +-*/
 var btns = document.getElementsByClassName("btn");
@@ -15,6 +15,9 @@ function equal() {
     // 如果 最終數字 等於 "" 就 跳出
     if (final == "") return;
 
+    var last = final[final.length - 1];
+    if (last == "+" || last == "-" || last == "*" || last == "/") return;
+    
     // eval 運算字串
     result.innerHTML = eval(final);
     // 清空
@@ -44,10 +47,23 @@ function show(content) {
 
     // 取得最後一個字
     var last = final[final.length - 1];
-    console.log(last);
+
+    // 邏輯運算子 || 或者
+    if (last == "+" || last == "-" || last == "*" || last == "/")
+        if (content == "+" || content == "-" || content == "*" || content == "/")
+            return;
 
     // 最終數字 += 參數-內容
     final += content;
     // 結果元素.內容 = 最終數字
     result.innerHTML = final;
+}
+
+// 清除
+var clearBtn = document.getElementById("clear");
+clearBtn.addEventListener("click", clear);
+
+function clear() {
+    final = "";
+    result.innerHTML = "0";
 }
